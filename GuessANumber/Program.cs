@@ -9,20 +9,17 @@ namespace GuessANumber
             // pick a random number between 1 and 100
             Random rng = new Random();
             int target = rng.Next(100) + 1;
-            
-            // ask the user to guess the number
-            if (Ask(target))
+
+            // keep asking the user until they guess correctly
+            while (!Ask(target))
             {
-                // correct
-                Console.WriteLine("Correct!");
-            }
-            else
-            {
-                // incorrect
-                Console.WriteLine(
-                    $"Incorrect. The correct answer was {target}.");
+                Console.WriteLine("Incorrect.");
             }
 
+            // correct
+            Console.WriteLine("Correct!");
+
+            // terminate after key press
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
