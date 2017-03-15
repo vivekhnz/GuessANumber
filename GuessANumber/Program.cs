@@ -10,8 +10,11 @@ namespace GuessANumber
             Random rng = new Random();
             int target = rng.Next(100) + 1;
 
-            // keep asking the user until they guess correctly
+            // ask the user to guess the number
+            int attempts = 1;
             Result result = Ask(target);
+
+            // keep asking the user until they guess correctly
             while (result != Result.Correct)
             {
                 // display relevant message
@@ -29,11 +32,13 @@ namespace GuessANumber
                 }
 
                 // ask again
+                attempts++;
                 result = Ask(target);
             }
 
             // correct
-            Console.WriteLine("Correct!");
+            Console.WriteLine(
+                $"Correct! You guessed the number in {attempts} tries.");
 
             // terminate after key press
             Console.WriteLine("Press any key to exit...");
