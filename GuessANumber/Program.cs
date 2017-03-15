@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GuessANumber
 {
@@ -10,7 +6,12 @@ namespace GuessANumber
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // pick a random number between 1 and 100
+            Random rng = new Random();
+            int target = rng.Next(100) + 1;
+
+            // print target number
+            Console.WriteLine(target);
             Console.ReadKey();
         }
     }
